@@ -12,6 +12,7 @@ on:
       - .github/workflows/build.yml
 
 permissions:
+  actions: write
   contents: read
   packages: write
 
@@ -70,3 +71,10 @@ jobs:
             org.opencontainers.image.title=LightCraft für Unraid
             org.opencontainers.image.version=${{ steps.v.outputs.version }}
             lightcraft.version=${{ steps.v.outputs.version }}
+
+      - name: Zeitplan aktiv halten
+        # GitHub deaktiviert Zeitpläne in öffentlichen Repos nach 60 Tagen ohne Aktivität.
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/build.yml/enable"
