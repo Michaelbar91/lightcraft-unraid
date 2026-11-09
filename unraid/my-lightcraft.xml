@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>lightcraft</Name>
+  <Repository>ghcr.io/michaelbar91/lightcraft-unraid:latest</Repository>
+  <Registry>https://github.com/Michaelbar91/lightcraft-unraid/pkgs/container/lightcraft-unraid</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/storytold/lightcraft</Support>
+  <Project>https://github.com/storytold/lightcraft</Project>
+  <Overview>LightCraft – RAW-Entwickler und Fotobibliothek, per Selkies im Browser. Image von github.com/Michaelbar91/lightcraft-unraid, automatisch bei neuen LightCraft-Versionen gebaut.</Overview>
+  <Category>MediaApp:Photos</Category>
+  <WebUI>https://[IP]:[PORT:3001]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Michaelbar91/lightcraft-unraid/main/unraid/my-lightcraft.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/512x512/apps/ai.storyteller.lightcraft.png</Icon>
+  <ExtraParams>--shm-size=1g --memory=24g</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI (HTTPS)" Target="3001" Default="3443" Mode="tcp" Description="Port für den Browser-Zugriff" Type="Port" Display="always" Required="true" Mask="false">3443</Config>
+  <Config Name="Config / Katalog" Target="/config" Default="/mnt/user/Docker/lightcraft/config" Mode="rw" Description="Einstellungen und LightCraft-Katalog" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Docker/lightcraft/config</Config>
+  <Config Name="Fotos" Target="/photos" Default="/mnt/user/Fotos" Mode="rw" Description="Foto-Freigabe (beschreibbar für XMP-Dateien)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Fotos</Config>
+  <Config Name="Intel GPU" Target="/dev/dri" Default="/dev/dri" Mode="" Description="iGPU für Vulkan und Video-Encoding" Type="Device" Display="always" Required="false" Mask="false">/dev/dri</Config>
+  <Config Name="Benutzername" Target="CUSTOM_USER" Default="michael" Mode="" Description="Login für die Weboberfläche" Type="Variable" Display="always" Required="true" Mask="false">michael</Config>
+  <Config Name="Passwort" Target="PASSWORD" Default="" Mode="" Description="Passwort für die Weboberfläche" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="Zeitzone" Target="TZ" Default="Europe/Berlin" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Berlin</Config>
+  <Config Name="LightCraft nativ unter Wayland" Target="LIGHTCRAFT_WAYLAND" Default="1" Mode="" Description="Scharfe Darstellung statt XWayland" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="Auflösung an Browser anpassen" Target="SELKIES_ENABLE_RESIZE" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="CSS-Skalierung" Target="SELKIES_USE_CSS_SCALING" Default="false" Mode="" Description="false = HiDPI" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Encoder" Target="SELKIES_ENCODER" Default="jpeg,h264enc" Mode="" Description="Erster Eintrag ist Standard" Type="Variable" Display="advanced" Required="false" Mask="false">jpeg,h264enc</Config>
+  <Config Name="JPEG-Qualität" Target="SELKIES_JPEG_QUALITY" Default="75" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">75</Config>
+  <Config Name="Nachzeichnen aktiv" Target="SELKIES_USE_PAINT_OVER_QUALITY" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="JPEG-Qualität Standbild" Target="SELKIES_PAINT_OVER_JPEG_QUALITY" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Volle Farbauflösung (4:4:4)" Target="SELKIES_VIDEO_FULLCOLOR" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="H.264-Qualität Standbild (CRF)" Target="SELKIES_VIDEO_PAINTOVER_CRF" Default="5" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">5</Config>
+  <Config Name="Bildrate" Target="SELKIES_FRAMERATE" Default="60" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">60</Config>
+</Container>
