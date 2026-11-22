@@ -30,6 +30,8 @@
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
   <Config Name="Zeitzone" Target="TZ" Default="Europe/Berlin" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Berlin</Config>
   <Config Name="LightCraft nativ unter Wayland" Target="LIGHTCRAFT_WAYLAND" Default="1" Mode="" Description="Scharfe Darstellung statt XWayland" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="SAM-3-Download-Quelle" Target="LIGHTCRAFT_SAM3_MIRRORS" Default="https://huggingface.co/facebook/sam3/resolve/main" Mode="" Description="Quelle für das KI-Maskenmodell (Objekt, Beschreiben)" Type="Variable" Display="advanced" Required="false" Mask="false">https://huggingface.co/facebook/sam3/resolve/main</Config>
+  <Config Name="Hugging-Face-Token" Target="LIGHTCRAFT_SAM3_TOKEN" Default="" Mode="" Description="Lese-Token von huggingface.co, nach Freigabe für facebook/sam3" Type="Variable" Display="always" Required="false" Mask="true"></Config>
   <Config Name="Auflösung an Browser anpassen" Target="SELKIES_ENABLE_RESIZE" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="CSS-Skalierung" Target="SELKIES_USE_CSS_SCALING" Default="false" Mode="" Description="false = HiDPI" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
   <Config Name="Encoder" Target="SELKIES_ENCODER" Default="jpeg,h264enc" Mode="" Description="Erster Eintrag ist Standard" Type="Variable" Display="advanced" Required="false" Mask="false">jpeg,h264enc</Config>
